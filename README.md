@@ -1,6 +1,3 @@
-# Basic Crypto Cheat Sheet for CTFs
-Cheat sheet para desafios básicos de criptografia em CTFs
-
 # Modo Magic do CyberChef
 ## Descrição
 Tenta adivinhar qual(is) algoritmo(s) foi(ram) usado(s) no texto codificado/cifrado e retorna as possíveis strings em texto claro. Pode demorar para executar dependendo do Depth definido.
@@ -58,8 +55,8 @@ ys1c7sGVvTBK7n6cMA//
 
 ## Código Morse
 ### Exemplos
-.... . .-.. .-.. --- / .-- --- .-. .-.. -..  
-(Áudios com bipes curtos e longos)
+.... . .-.. .-.. --- / .-- --- .-. .-.. -..
+(Áudios com bipes curtos e longos. Os bipes curtos representam os pontos e os bipes longos representam os hífens.)
 
 [Pelo CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Morse_Code('Space','Line%20feed')&input=Li4uLiAuIC4tLi4gLi0uLiAtLS0gLyAuLS0gLS0tIC4tLiAuLS4uIC0uLg)
 
@@ -279,6 +276,14 @@ PayeoEkpuz
 Diferente da criptografia, na esteganografia tentamos ocultar a existência da mensagem.
 
 ## Ferramentas
+### strings
+Este utilitário permite visualizar as strings de um arquivo.
+
+Utilização da ferramenta:
+```bash
+string <arquivo>
+```
+
 ### exiftool
 Esta ferramenta permite visualizar metadados de um arquivo.
 
