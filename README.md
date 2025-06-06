@@ -215,7 +215,7 @@ Algoritmo de criptografia simétrica.
 ### Exemplo
 Xy97JnhqQCVlJnM=
 
-[Pelo CyberChef](https://gchq.github.io/CyberChef/#recipe=XOR_Brute_Force(2,100,0,'Standard',false,true,false,'Hello')&input=Xy97JnhqQCVlJnM)
+[Pelo CyberChef]([https://gchq.github.io/CyberChef/#recipe=XOR_Brute_Force(2,100,0,'Standard',false,true,false,'Hello')&input=Xy97JnhqQCVlJnM](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)XOR_Brute_Force(2,100,0,'Standard',true,true,false,'Hello')&input=WHk5N0puaHFRQ1ZsSm5NPQ&ieol=CRLF))
 
 ### Observações
 * Às vezes é necessário decodificar a string em base64 antes de fazer o XOR.
