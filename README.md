@@ -56,6 +56,13 @@ ys1c7sGVvTBK7n6cMA//
 
 [Ferramenta online](http://qbarbe.free.fr/crypto/eng_esab46c.php)
 
+## Código Morse
+### Exemplos
+.... . .-.. .-.. --- / .-- --- .-. .-.. -..
+(Áudios com bipes curtos e longos)
+
+[Pelo CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Morse_Code('Space','Line%20feed')&input=Li4uLiAuIC4tLi4gLi0uLiAtLS0gLyAuLS0gLS0tIC4tLiAuLS4uIC0uLg)
+
 # Hashing
 ## Definição e finalidade
 Função matemática unidirecional que produz uma saída de tamanho fixo. Usada para armazenar senhas de forma segura e verificação de integridade.
@@ -184,6 +191,26 @@ Uryyb Jbeyq
 
 [Pelo CyberChef](https://gchq.github.io/CyberChef/#recipe=ROT13_Brute_Force(true,true,false,100,0,true,'')&input=VXJ5eWIgSmJleXE)
 
+## Cifra maçônica
+### Descrição
+Também conhecida como [cifra pigpen](https://pt.wikipedia.org/wiki/Cifra_ma%C3%A7%C3%B3nica). É um algoritmo de substituição em que as letras do alfabeto são substituídas por símbolos.
+
+![Letras do alfabeto e seus respectivos símbolos na cifra maçônica](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*4tHgmNenIr6KT586F03CCg.jpeg)
+
+### Exemplo
+![Exemplo de mensagem criptografada usando a cifra maçônica](https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/A-pigpen-message.svg/1920px-A-pigpen-message.svg.png)
+
+[Ferramenta online](https://www.dcode.fr/pigpen-cipher)
+
+## Atbash
+### Definição
+Outro algoritmo de substituição em que a primeira letra do alfabeto é substituída pela última, a segunda é substituída pela penúltima, etc.
+
+### Exemplo
+Svool Dliow
+
+[Pelo CyberChef](https://gchq.github.io/CyberChef/#recipe=Atbash_Cipher()&input=U3Zvb2wgRGxpb3c&ieol=CRLF&oeol=CRLF)
+
 ## XOR
 ### Classificação
 Algoritmo de criptografia simétrica.
@@ -236,5 +263,97 @@ Algoritmo de criptografia assimétrico. A ferramenta RsaCtfTool é útil para en
 
 [Repositório da ferramenta RsaCtfTool](https://github.com/RsaCtfTool/RsaCtfTool)
 
+Exemplo de utilização da ferramenta:
+```bash
+./RsaCtfTool.py -n <valor de n> -e <valor de e> --uncipher <texto cifrado codificado em hexadecimal>
+```
+
 ## Vigenère
-[Ferramenta online](https://www.dcode.fr/vigenere-cipher)
+### Exemplo
+PayeoEkpuz
+
+[Pelo CyberChef](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Encode('SenhaSecretaDeExemplo')&input=UGF5ZW9Fa3B1eg)
+
+# Esteganografia
+## Definição
+Diferente da criptografia, na esteganografia tentamos ocultar a existência da mensagem.
+
+## Ferramentas
+### exiftool
+Esta ferramenta permite visualizar metadados de um arquivo.
+
+Instalação da ferramenta:
+```bash
+apt install exiftool
+```
+
+Utilização da ferramenta:
+```bash
+exiftool <arquivo>
+```
+
+### zsteg
+Esta ferramenta permite extrair mensagens ocultas de arquivos .bmp e .png.
+
+Instalação da ferramenta:
+```bash
+gem install zsteg
+```
+
+Utilização da ferramenta:
+```bash
+zsteg -a <arquivo .bmp ou .png>
+```
+
+[Repositório da ferramenta zsteg](https://github.com/zed-0xff/zsteg)
+
+### binwalk
+Esta ferramenta permite extrair arquivos ocultos de outros arquivos.
+
+Instalação da ferramenta:
+```bash
+apt update; apt install python3-binwalk
+```
+
+Utilização da ferramenta:
+```bash
+python3 -m binwalk -Me <arquivo>
+```
+
+Após a execução do comando acima, um diretório com o(s) arquivo(s) extraído(s) será criado. O nome desse diretório termina com a string "extracted".
+
+[Repositório da ferramenta binwalk](https://github.com/ReFirmLabs/binwalk)
+
+### stegseek
+Esta ferramenta permite extrair arquivos ocultos de arquivos .jpg e .wav por meio de uma wordlist com senhas.
+
+Instalação da ferramenta:
+```bash
+apt update; apt install stegseek
+```
+
+Utilização da ferramenta:
+```bash
+# A wordlist com senhas normalmente é a rockyou.txt. No entanto, a senha pode ser encontrada durante algum passo anterior do desafio
+stegseek <arquivo .jpg ou .wav> <wordlist com senhas>
+```
+
+[Repositório da ferramenta stegseek](https://github.com/RickdeJager/StegSeek)
+
+### stegsolve
+Esta ferramenta permite aplicar filtros em imagens, possivelmente revelando segredos nelas.
+
+Download da ferramenta:
+```bash
+curl -OL 'https://github.com/Giotino/stegsolve/releases/download/v1.4/StegSolve-1.4.jar'
+```
+
+Utilização da ferramenta:
+```bash
+java -jar StegSolve-1.4.jar
+```
+
+### Esteganografia em áudio
+Caso o desafio forneça um arquivo em áudio, e esse áudio apresente chiado, possivelmente há alguma mensagem oculta nele.  
+
+Esta [ferramenta online](https://academo.org/demos/spectrum-analyzer/) permite analisar o espectro de áudio e revelar possíveis strings ocultas. Alternativamente, podemos baixar e utilizar o programa Audacity.
