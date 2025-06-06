@@ -55,7 +55,7 @@ ys1c7sGVvTBK7n6cMA//
 
 ## Código Morse
 ### Exemplos
-.... . .-.. .-.. --- / .-- --- .-. .-.. -..
+.... . .-.. .-.. --- / .-- --- .-. .-.. -..  
 (Áudios com bipes curtos e longos. Os bipes curtos representam os pontos e os bipes longos representam os hífens.)
 
 [Pelo CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Morse_Code('Space','Line%20feed')&input=Li4uLiAuIC4tLi4gLi0uLiAtLS0gLyAuLS0gLS0tIC4tLiAuLS4uIC0uLg)
