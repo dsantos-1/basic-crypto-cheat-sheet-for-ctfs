@@ -281,7 +281,7 @@ Este utilitário permite visualizar as strings de um arquivo.
 
 Utilização da ferramenta:
 ```bash
-string <arquivo>
+strings <arquivo>
 ```
 
 ### exiftool
